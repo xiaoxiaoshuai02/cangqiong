@@ -113,6 +113,21 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         return new PageResult(total, records);
     }
+
+    public void  startOrStop(Integer status,Long id){
+
+        Employee  employee = new Employee();
+        employee.setStatus(status);
+        employee.setId(id);
+
+        //或者可以用这种编程方法，因为之前已经对Builder进行过注解
+       /* Employee employee1= Employee.builder()
+        // .status(status)
+        // .id(id)
+         .build();
+         */
+        employeeMapper.update(employee);
+    }
 }
 
 
