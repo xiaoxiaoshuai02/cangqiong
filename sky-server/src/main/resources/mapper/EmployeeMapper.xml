@@ -15,8 +15,8 @@
             <if test="updateUser != null">update_User = #{updateUser},</if>
             <if test="status != null">status = #{status},</if>
         </set>
+        where id = #{id}
     </update>
-
 
     <select id="pageQuery" resultType="com.sky.entity.Employee">
         select * from employee
